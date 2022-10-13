@@ -35,3 +35,11 @@ sources:
         freshness:
           warn_after: {count: 144, period: hour}
           error_after: {count: 144, period: hour}
+  - name: aws_information_schema
+    description: info schema
+    database: "{{var('raw_aws_db')}}"
+    #database: "DIG_{{env_var('DBT_RRTEST_ENV')}}_RAW_AWS_DB"
+    schema: "information_schema"
+    tables: 
+      - name: columns
+      - name: tables

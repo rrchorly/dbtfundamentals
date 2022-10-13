@@ -24,6 +24,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+ vars:
+  raw_aws_db: "DIG_{{env_var('DBT_RRTEST_ENV')}}_RAW_AWS_DB"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
