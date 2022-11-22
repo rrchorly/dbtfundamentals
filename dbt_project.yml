@@ -3,7 +3,7 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'jaffle_shop'
-version: '1.0.0'
+version: '1.3.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
@@ -38,3 +38,5 @@ models:
         +materialized: table
     staging:
       +materialized: view
+
+on-run-end: "{% if target.name == 'default' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
