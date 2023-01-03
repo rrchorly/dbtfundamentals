@@ -38,5 +38,3 @@ models:
         +materialized: table
     staging:
       +materialized: view
-
-on-run-end: "{% if target.name == 'default' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
