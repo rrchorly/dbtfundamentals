@@ -24,7 +24,6 @@ aggregated_page_events as (
     from events
     group by 1
 ),
-
 joined as (
     select 
         *
@@ -36,7 +35,7 @@ indexed as (
     select 
         *,
         row_number() over (
-            partition by session_id,
+            partition by session_id 
             order by page_view_start
         ) as page_view_in_session_index,
         row_number() over (
