@@ -43,4 +43,4 @@ models:
     +enabled: true
     +schema: spend
 
-on-run-end: "{% if target.name == 'default' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
+#on-run-end: "{% if target.name == 'default' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
