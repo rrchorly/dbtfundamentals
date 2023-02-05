@@ -35,3 +35,9 @@ sources:
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
+  - name: MyProject
+    database: raw
+    schema: test_"{{ env_var('DBT_PROJECT') }}"
+    tables:
+      - name: customers
+        description: Raw customers data.

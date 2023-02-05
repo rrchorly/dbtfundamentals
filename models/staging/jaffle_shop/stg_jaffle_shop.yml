@@ -9,9 +9,18 @@ models:
         tests:
           - unique
           - not_null
-
   - name: stg_orders
     description: Staged order data from our jaffle shop app.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - order_date
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - order_date
+            - status
     columns:
       - name: order_id
         description: Primary key for orders.
@@ -34,3 +43,4 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+      

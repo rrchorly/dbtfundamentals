@@ -34,13 +34,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   jaffle_shop:
     marts:
+      +schema: marts
       core:
         +materialized: table
     staging:
+      +schema: staging
       +materialized: view
-
-  snowflake_spend:
-    +enabled: true
-    +schema: spend
-
-#on-run-end: "{% if target.name == 'default' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
