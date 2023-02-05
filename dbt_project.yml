@@ -3,7 +3,7 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'jaffle_shop'
-version: '1.3.0'
+version: '1.3.1'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
@@ -34,9 +34,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   jaffle_shop:
     marts:
+      +schema: marts
       core:
         +materialized: table
     staging:
+      +schema: staging
       +materialized: view
-
-on-run-end: "{% if target.name == 'default' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
