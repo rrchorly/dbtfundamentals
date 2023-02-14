@@ -3,7 +3,7 @@
 {{
     config(
       target_database='analytics',
-      target_schema='snapshots',
+      target_schema= 'dbt_rrajan_snapshots',
       unique_key='id',
 
       strategy='timestamp',

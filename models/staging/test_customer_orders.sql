@@ -10,7 +10,7 @@ customer_orders as (
     select 
  
         customers.customer_id as customer_id,
-        customers.first_name as first_name,
+   --     customers.first_name as first_name, remove first name
         customers.last_name as last_name,
         orders.order_id as order_id,
         orders.order_date as order_date,
