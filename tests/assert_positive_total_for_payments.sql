@@ -1,3 +1,6 @@
+{{ config(store_failures = true) }}
+{{ config(severity = 'warn') }}
+
 with payments as (
     select * from {{ ref('stg_payments') }}
 )
