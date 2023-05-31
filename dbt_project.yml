@@ -30,10 +30,12 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 snapshots:
-  +post-hook: 
-    - "update {{ this }} set status = 'reversed' where status='returned' "
-  +target_database: "{{ 'dbt_rrajan_prod' if target.name == 'prod' else 'dbt_rrajan' }}"
-  +target_schema: "dbt_rrajan_snapshots"
+  dbtfundamentals:
+    snapshotorders:
+      +post-hook: 
+        - "update {{ this }} set status = 'reversed' where status='returned' "
+      +target_database: "{{ 'dbt_rrajan_prod' if target.name == 'prod' else 'dbt_rrajan' }}"
+      +target_schema: "dbt_rrajan_snapshots"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
