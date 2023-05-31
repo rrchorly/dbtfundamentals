@@ -31,7 +31,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 snapshots:
   +post-hook: 
-    - "update {{ this }} set current_indicator = case when dbt_valid_to is not null then 'N' else 'Y' end"
+    - "update {{ this }} set status = 'reversed' where status='returned' "
   +target_database: "{{ 'dbt_rrajan_prod' if target.name == 'prod' else 'dbt_rrajan' }}"
   +target_schema: "dbt_rrajan_snapshots"
 
