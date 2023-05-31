@@ -29,7 +29,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
+snapshots:
+  +post-hook: 
+    - "update {{ this }} set current_indicator = case when dbt_valid_to is not null then 'N' else 'Y' end"
+  +target_database: "{{ 'prd_p_edw' if target.name == 'prod' else 'dev_p_edw' }}"
+  +target_schema: "dbt_rrajan_snapshots"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
