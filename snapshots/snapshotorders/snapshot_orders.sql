@@ -2,7 +2,6 @@
 
 {{
     config(
-      target_database='analytics',
       target_schema= 'dbt_rrajan_snapshots',
       unique_key='id',
 
