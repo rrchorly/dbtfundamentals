@@ -11,4 +11,8 @@
 
 select * from {{ source('jaffle_shop', 'orders') }}
 
+/*
+{{ target | tojson(indent=4) }}
+*/
+
 {% endsnapshot %}
