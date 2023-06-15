@@ -11,3 +11,10 @@ select
 from payments
 group by 1
 having not(total_amount >= 0)
+
+/*
+select
+    count(*)
+from payments
+where 1=2
+*/

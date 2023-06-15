@@ -1,7 +1,7 @@
 version: 2
 
 snapshots:
-  - name: snapshot_orders
+  - name: order_snapshots
     description: orders snapshot
-    docs:
-      show: true
+   # docs:
+    #  show: true

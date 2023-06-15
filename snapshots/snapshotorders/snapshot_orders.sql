@@ -2,17 +2,14 @@
 
 {{
     config(
+      alias='rrajan_snapshots',
       target_schema= 'dbt_rrajan_snapshots',
       unique_key='id',
-      strategy='timestamp',
-      updated_at='_etl_loaded_at',
+      strategy='check',
+      check_cols='all'
     )
 }}
 
 select * from {{ source('jaffle_shop', 'orders') }}
-
-/*
-{{ target | tojson(indent=4) }}
-*/
 
 {% endsnapshot %}
