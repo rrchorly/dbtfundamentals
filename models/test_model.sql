@@ -1,4 +1,4 @@
-{% set last_warehouse_query  %}
+{% set last_warehouse_query %}
     show warehouses;
     select
         query_id
@@ -12,11 +12,10 @@
 
 {% set query_id = dbt_utils.get_single_value(last_warehouse_query) %}
 
-with 
+with
 
 final as (
-    select 
-        *
+    select *
     from table(result_scan('{{ query_id }}'))
 )
 
