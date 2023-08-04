@@ -47,3 +47,6 @@ models:
   # fivetran_log:
   #   +schema: fivetran_billing_log
   #   +materialized: table
+
+on-run-end:
+  - "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
