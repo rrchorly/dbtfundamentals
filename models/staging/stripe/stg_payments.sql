@@ -14,4 +14,4 @@ select
     {{ cents_to_dollars('amount',4)}} as amount,
     created as created_at
 
-from {{ source('stripe', 'stripe_payments') }}
+from stripe_payments

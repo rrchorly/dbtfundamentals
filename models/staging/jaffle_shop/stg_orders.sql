@@ -6,10 +6,9 @@ with orders as (
         order_date,
         status
 
-    from {{ source('jaffle_shop','jaffle_shop_orders') }}
+    --from {{ source('jaffle_shop','jaffle_shop_orders') }}
+    from jaffle_shop_orders
 
 )
 
 select * from orders
-
-{{ limit_data_in_default('order_date',2000) }}   
