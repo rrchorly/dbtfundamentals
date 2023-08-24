@@ -41,3 +41,8 @@ sources:
     tables:
       - name: customers
         description: Raw customers data.
+  - name: healthlabs
+    database: raw
+    schema: health_data
+    tables:
+      - name: labs
