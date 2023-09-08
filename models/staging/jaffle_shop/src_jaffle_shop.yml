@@ -3,10 +3,10 @@ version: 2
 sources:
   - name: jaffle_shop
     description: A clone of a Postgres application database.
-    database: raw
-    schema: jaffle_shop
+    database: dbt_rrajan
+    schema: default
     tables:
-      - name: customers
+      - name: jaffle_shop_customers
         description: Raw customers data.
         columns:
           - name: id
@@ -14,7 +14,7 @@ sources:
             tests:
               - unique
               - not_null
-      - name: orders
+      - name: jaffle_shop_orders
         description: Raw orders data.
         columns:
           - name: id
@@ -27,14 +27,15 @@ sources:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
   - name: stripe
-    database: raw
-    schema: stripe
+    database: dbt_rrajan
+    schema: default
     tables:
-      - name: payment
+      - name: stripe_payments
         loaded_at_field: _batched_at
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
+<<<<<<< HEAD
   - name: MyProject
     database: raw
     schema: test_"{{ env_var('DBT_PROJECT') }}"
@@ -46,3 +47,5 @@ sources:
     schema: health_data
     tables:
       - name: labs
+=======
+>>>>>>> 5d8963fb0455a08e352658268f82d1dfa9cbc396
