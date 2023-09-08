@@ -2,10 +2,4 @@ packages:
   - package: calogica/dbt_expectations
     version: 0.9.0
   - package: dbt-labs/dbt_utils
-<<<<<<< HEAD
     version: 1.1.1
-=======
-    version: 1.1.1
-  - package: brooklyn-data/dbt_artifacts
-    version: 2.4.3
->>>>>>> 5d8963fb0455a08e352658268f82d1dfa9cbc396

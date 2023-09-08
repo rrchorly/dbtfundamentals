@@ -40,18 +40,8 @@ models:
     marts:
       core:
         +materialized: table
-<<<<<<< HEAD
     staging:
       +schema: staging
       +materialized: view
-    target:
-      +schema: target
-      +materialized: view
-=======
-      staging:
-  #    +schema: staging
-        +materialized: view
-  # fivetran_log:
-  #   +schema: fivetran_billing_log
-  #   +materialized: table
->>>>>>> 5d8963fb0455a08e352658268f82d1dfa9cbc396
+
+

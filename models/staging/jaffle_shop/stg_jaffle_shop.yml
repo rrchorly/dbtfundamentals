@@ -9,15 +9,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: test_column
-        description: "non quoted test column"
-        tests:
-          - not_null
-      - name: test_2_column
-        quote: true
-        description: "quoted test column"
-        tests:
-          - not_null
   - name: stg_orders
     description: Staged order data from our jaffle shop app.
     tests:
