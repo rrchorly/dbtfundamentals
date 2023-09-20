@@ -1,6 +1,7 @@
 {{ config(
     materialized = 'incremental',
-    unique_key = 'page_view_id'
+    unique_key = 'page_view_id',
+    merge_exclude_columns=['event_id']
    ) }}
 with events as (
     select * from {{ source('snowplow', 'events') }}
