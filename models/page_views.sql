@@ -1,10 +1,24 @@
 {{ config(
     materialized = 'incremental',
-    unique_key = 'page_view_id',
-    merge_exclude_columns=['event_id']
+    unique_key = 'page_view_id'
    ) }}
 with events as (
-    select * from {{ source('snowplow', 'events') }}
+    select PAGE_VIEW_ID,
+    ANONYMOUS_USER_ID,
+SESSION_ID,
+EVENT,
+DEVICE_TYPE,
+PAGE_URL,
+PAGE_TITLE,
+PAGE_URLSCHEME,
+PAGE_URLHOST,
+PAGE_URLPORT,
+PAGE_URLPATH,
+PAGE_URLQUERY,
+PAGE_URLFRAGMENT,
+COLLECTOR_TSTAMP,
+DERIVED_TSTAMP 
+from {{ source('snowplow', 'events') }}
     {% if is_incremental() %}
         -- this filter will only be applied on an incremental run
         where collector_tstamp > (select dateadd('day',-3, max(max_collector_tstamp)) from {{ this }}) 
