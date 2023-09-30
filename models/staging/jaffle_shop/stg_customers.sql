@@ -6,5 +6,5 @@ with customers as (
         last_name 
     from {{ source('jaffle_shop','customers') }}
 )
-
+-- {{ dbt_version }}
 select * from customers 
