@@ -1,4 +1,4 @@
-with payments as (
+with stg_payments as (
     
     select
         id as payment_id,
@@ -11,4 +11,4 @@ with payments as (
     from {{ source('stripe', 'payment') }}
 )
 
-select * from payments
+select * from stg_payments
