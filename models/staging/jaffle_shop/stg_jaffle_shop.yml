@@ -47,5 +47,3 @@ models:
               field: customer_id
   - name: stg_payments
     description: Staged Payments data
-  - name: stg_labs
-    description: lab data
