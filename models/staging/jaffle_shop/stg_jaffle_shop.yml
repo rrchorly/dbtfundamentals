@@ -47,7 +47,5 @@ models:
               field: customer_id
   - name: stg_payments
     description: Staged Payments data
-  #  tests:
-   #   - assert_positive_total_for_payments
   - name: stg_labs
     description: lab data
