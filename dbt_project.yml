@@ -40,7 +40,6 @@ query-comment:
   comment: "comment {{ dbt_version }}"
   append: true
 models:
-  jaffle_shop:
     marts:
       core:
         +materialized: table
