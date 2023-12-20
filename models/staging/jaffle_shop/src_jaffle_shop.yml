@@ -35,3 +35,9 @@ sources:
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
+  - name: snowflake
+    database: snowflake_sample_data
+    schema: tpch_sf1000
+    tables:
+      - name: supplier
+      - name: lineitem

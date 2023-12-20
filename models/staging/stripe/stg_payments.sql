@@ -1,3 +1,7 @@
+{{ config(
+    tags=["finance"]
+) }}
+
 with stg_payments as (
     
     select

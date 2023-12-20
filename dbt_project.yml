@@ -47,5 +47,6 @@ models:
     staging:
       +schema: staging
       +materialized: view
-
+      +tags:
+        - "hourly"
 
