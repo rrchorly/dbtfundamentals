@@ -1,0 +1,26 @@
+[sqlfluff]
+templater = dbt
+dialect = redshift
+exclude_rules = RF02,RF04
+max_line_length = 100
+sql_file_exts = .sql,.sql.j2,.dml,.ddl
+
+[sqlfluff:rules:references.keywords]
+ignore_words = date,value,id,type,location
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper
+
+[sqlfluff:indentation]
+indented_joins = false
+indented_using_on = true
+template_blocks_indent = false
+
+[sqlfluff:templater]
+unwrap_wrapped_queries = true
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = true
+
+[sqlfluff:layout:type:comma]
+line_position = leading
