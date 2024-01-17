@@ -33,5 +33,9 @@ models:
         data_type: int
   - name: fct_orders
     access: private
+    config:
+      group: customer_group
   - name: int_orders__pivoted
     access: protected
+    config:
+      group: customer_group
