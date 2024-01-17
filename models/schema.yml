@@ -31,3 +31,7 @@ models:
         data_type: date
       - name: number_of_orders
         data_type: int
+  - name: fct_orders
+    access: private
+  - name: int_orders__pivoted
+    access: protected
