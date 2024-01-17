@@ -10,32 +10,16 @@ models:
   - name: dim_customers
     access: public
     config:
-      contract:
-        enforced: true
-    columns:
-      - name: customer_id
-        data_type: int
-        constraints:
-          - type: not_null
-      - name: first_name
-        data_type: string
-      - name: last_name
-        data_type: string
-      - name: '"customer name"'
-        data_type: string
-      - name: first_order_date  
-        data_type: date
-      - name: lifetime_value 
-        data_type: int
-      - name: most_recent_order_date
-        data_type: date
-      - name: number_of_orders
-        data_type: int
+      group: customer_group
   - name: fct_orders
     access: private
     config:
       group: customer_group
   - name: int_orders__pivoted
     access: protected
+    config:
+      group: customer_group
+  - name: customer_order_unique
+    access: public
     config:
       group: customer_group
