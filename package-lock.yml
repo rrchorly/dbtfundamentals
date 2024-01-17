@@ -1,0 +1,10 @@
+packages:
+- package: dbt-labs/dbt_utils
+  version: 1.1.1
+- package: dbt-labs/logging
+  version: 0.8.0
+- package: dbt-labs/codegen
+  version: 0.12.1
+- package: elementary-data/elementary
+  version: 0.13.1
+sha1_hash: a40e8d8c4510c116ea346cc8201056e910075844
