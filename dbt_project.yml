@@ -43,6 +43,8 @@ models:
     marts:
       core:
         +materialized: table
+        - name: dim_customers
+          access: public
     staging:
       +schema: staging
       +materialized: view
