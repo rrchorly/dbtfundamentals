@@ -1,6 +1,6 @@
 models:
   - name: dim_customers
-    access: public
+#  access: public
     config:
       contract:
         enforced: true
