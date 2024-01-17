@@ -1,6 +1,12 @@
+groups:
+  - name: customer_group
+    owner:
+      name: RR_JF
+      email: rijesh.rajan@dbtlabs.com
+      
 models:
   - name: dim_customers
-#  access: public
+    access: public
     config:
       contract:
         enforced: true
