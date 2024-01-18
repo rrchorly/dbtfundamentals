@@ -9,7 +9,7 @@ exposures:
     url: https://bi.tool/dashboards/1       # optional
     description: >                          # optional
       Did someone say "exponential growth"?
-
+    
     depends_on:                             # expected
       - ref('fct_orders')
       - ref('dim_customers')
