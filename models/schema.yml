@@ -1,5 +1,5 @@
 version: 2
-
+ 
 groups:
   - name: customer_group
     owner:
