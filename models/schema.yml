@@ -8,18 +8,17 @@ groups:
       
 models:
   - name: dim_customers
+    group: customer_group
     access: public
-    config:
-      group: customer_group
+
   - name: fct_orders
+    group: customer_group
     access: private
-    config:
-      group: customer_group
+
   - name: int_orders__pivoted
+    group: customer_group
     access: protected
-    config:
-      group: customer_group
+
   - name: customer_order_unique
+    group: customer_group
     access: public
-    config:
-      group: customer_group
