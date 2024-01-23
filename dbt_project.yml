@@ -42,6 +42,7 @@ query-comment:
 models:
     marts:
       core:
+        +access: public
         +materialized: table
     staging:
       +schema: staging
