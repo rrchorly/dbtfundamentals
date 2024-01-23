@@ -40,6 +40,7 @@ query-comment:
   comment: "comment {{ dbt_version }}"
   append: true
 models:
+  RRProject_jaffleshop:
     marts:
       core:
         +access: public
