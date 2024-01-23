@@ -41,6 +41,7 @@ query-comment:
   append: true
 models:
     marts:
+      access: public
       core:
         +materialized: table
     staging:
