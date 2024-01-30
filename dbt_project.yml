@@ -42,8 +42,8 @@ query-comment:
 models:
   RRProject_jaffleshop:
     marts:
+      +access: public
       core:
-        +access: public
         +materialized: table
     staging:
       +schema: staging
