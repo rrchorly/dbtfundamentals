@@ -43,7 +43,7 @@ models:
   RRProject_jaffleshop:
     marts:
       core:
-      #  +access: public
+        +access: public
         +materialized: table
     staging:
       +schema: staging
