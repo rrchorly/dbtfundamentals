@@ -1,5 +1,6 @@
 {{ config(
-    tags=["finance"]
+    tags=["finance"],
+    group='customer_success'
 ) }}
 
 with stg_payments as (
