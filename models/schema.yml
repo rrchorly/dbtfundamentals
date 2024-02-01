@@ -22,3 +22,7 @@ models:
   - name: int_orders__pivoted
     group: customer_success
     access: protected
+
+  - name: customer_order_unique 
+    group: customer_success
+    access: public
