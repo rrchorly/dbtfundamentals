@@ -47,3 +47,4 @@ models:
               field: customer_id
   - name: stg_payments
     description: Staged Payments data
+    access: private
