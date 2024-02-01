@@ -39,10 +39,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 query-comment:
   comment: "comment {{ dbt_version }}"
   append: true
+  
 models:
   RRProject_jaffleshop:
     marts:
-      +access: public
       core:
         +materialized: table
     staging:
