@@ -1,9 +1,10 @@
-with quelle_raw as (
-select 1 as source_id
+WITH quelle_raw AS (
+    SELECT 1 AS source_id
+
 ),
 
-quelle as (
-select {{ dummy_macro( something='loremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumremipsumloremipsumloremipsum', anything=true ) }} from quelle_raw
+quelle AS (
+    SELECT {{ dummy_macro( something='loremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumremipsumloremipsumloremipsum', anything=true ) }} FROM quelle_raw
 )
 
-select * from quelle
+SELECT * FROM quelle
