@@ -1,7 +1,7 @@
 [sqlfluff]
 templater = dbt
-dialect = redshift
-exclude_rules = RF02,RF04
+dialect = snowflake
+exclude_rules = RF02,RF04,LT05
 max_line_length = 100
 sql_file_exts = .sql,.sql.j2,.dml,.ddl
 
