@@ -10,3 +10,4 @@ with orders as (
 
 select * from orders
 
+{{ limit_data_in_default('order_date',1000)}}
