@@ -1,0 +1,11 @@
+version: 2
+
+
+
+exposures:
+  - name: weekly_jf_metrics
+    type: dashboard
+    depends_on:
+      - ref('dim_customers')
+    owner:
+      email: rijesh.rajan@dbtlabs.om
