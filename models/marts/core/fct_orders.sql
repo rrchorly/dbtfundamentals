@@ -6,6 +6,8 @@
     )
 }}
 
+
+
 with
     orders as (select * from {{ ref("stg_orders") }}),
 
@@ -23,6 +25,8 @@ with
         select
             orders.order_id,
             orders.customer_id,
+
+            -- adding coment for CI
             orders.order_date,
             coalesce(order_payments.amount, 0) as amount
 
