@@ -44,6 +44,7 @@ models:
   RRProject_jaffleshop:
     marts:
       core:
+        +schema: rr_marts
         +materialized: table
     staging:
       +schema: staging

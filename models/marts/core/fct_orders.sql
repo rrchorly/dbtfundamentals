@@ -1,7 +1,7 @@
 {{
     config(
-        charset='utf8mb4',
-        collation='utf8mb4_general_ci'
+        materialized='table',
+        post_hook=["ALTER TABLE {{ this }} ADD COLUMN c6 DATE DEFAULT '20230101'"]
     )
 }}
 
@@ -22,6 +22,8 @@ with
         select
             orders.order_id,
             orders.customer_id,
+
+            -- adding coment for CI
             orders.order_date,
             coalesce(order_payments.amount, 0) as amount
 
