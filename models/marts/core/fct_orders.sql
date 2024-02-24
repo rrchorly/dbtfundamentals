@@ -1,12 +1,9 @@
 {{
     config(
-        charset='utf8mb4',
-        collation='utf8mb4_general_ci',
-        materialized='ephemeral'
+        materialized='table',
+        post_hook=["ALTER TABLE {{ this }} ADD COLUMN c6 DATE DEFAULT '20230101'"]
     )
 }}
-
-
 
 with
     orders as (select * from {{ ref("stg_orders") }}),
