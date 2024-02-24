@@ -1,10 +1,3 @@
-{{
-    config(
-        materialized='table',
-        post_hook=["ALTER TABLE {{ this }} ADD COLUMN c6 DATE DEFAULT '20230101'"]
-    )
-}}
-
 with
     orders as (select * from {{ ref("stg_orders") }}),
 
