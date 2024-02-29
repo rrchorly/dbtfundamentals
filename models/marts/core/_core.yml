@@ -11,18 +11,47 @@ models:
   - name: dim_customers
     group: customer_success
     access: public
-    
+    columns:
+      - name: customer_id
+        description: Primary Key for dim_customers
+        tests:
+          - unique
+          - not_null
   # This is a private model -- it's an intermediate transformation intended for use in this context *only*
   - name: fct_orders
     group: customer_success
     access: private
-    
+    columns:
+      - name: order_id
+        description: Primary Key for fct_orders
+        tests:
+          - unique
+          - not_null
+    #  - name: customer_id
+    #    tests:
+    #      - unique
+      - name: amount
+        tests:
+          - assert_column_is_greater_than_five
+              
   # This is a protected model -- it might be useful elsewhere in *this* project,
   # but it shouldn't be exposed elsewhere
   - name: int_orders__pivoted
     group: customer_success
     access: protected
+    columns:
+      - name: order_id
+        description: Primary Key for int_orders__pivoted
+        tests:
+          - unique
+          - not_null
 
   - name: customer_order_unique 
     group: customer_success
     access: public
+    columns:
+      - name: unique_id
+        description: Primary Key for customer_order_unique
+        tests:
+          - unique
+          - not_null

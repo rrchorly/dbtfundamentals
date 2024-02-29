@@ -43,7 +43,9 @@ query-comment:
 models:
   RRProject_jaffleshop:
     marts:
+      +required_tests: {"unique.*|not_null.*": 2}
       core:
+        +required_tests: {"relationship.*": 1}
         +schema: rr_marts
         +materialized: table
     staging:
@@ -51,4 +53,3 @@ models:
       +materialized: view
       +tags:
         - "hourly"
-

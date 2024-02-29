@@ -7,3 +7,7 @@ packages:
     version: 0.12.1
   - package: Snowflake-Labs/dbt_constraints
     version: 0.6.2 
+  - package: tnightengale/dbt_meta_testing
+    version: 0.3.6
+  - package: snowplow/snowplow_utils
+    version: 0.16.2
