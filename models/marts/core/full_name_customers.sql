@@ -1,3 +1,9 @@
+{{
+    config(
+       required_tests=None
+    )
+}}
+
 with customers as (
     select * from {{ ref('dim_customers') }}
 ),

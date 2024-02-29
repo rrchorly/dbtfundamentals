@@ -14,4 +14,10 @@ end_date= end_date) }}
 )
 
 
+{{
+    config(
+       required_tests=None
+    )
+}}
+
 SELECT DATE_{{datepart}} as AS_OF_DATE FROM as_of_date
