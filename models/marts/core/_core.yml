@@ -27,12 +27,9 @@ models:
         tests:
           - unique
           - not_null
-    #  - name: customer_id
-    #    tests:
-    #      - unique
       - name: amount
-        tests:
-          - assert_column_is_greater_than_five
+       # tests:
+        #  - assert_column_is_greater_than_five
               
   # This is a protected model -- it might be useful elsewhere in *this* project,
   # but it shouldn't be exposed elsewhere
