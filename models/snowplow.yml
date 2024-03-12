@@ -6,7 +6,7 @@ sources:
     schema: snowplow
     loaded_at_field: collector_tstamp
     freshness:
-      error_after:
+      warn_after:
         count: 1
         period: hour
     tables:
