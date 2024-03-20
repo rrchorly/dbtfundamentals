@@ -1,6 +1,6 @@
 {{
     config(
-        materialized='view',
+        materialized='incremental',
         group='customer_success',
         required_tests=None
     )
