@@ -25,6 +25,8 @@ with
         left join order_payments using (order_id)
     )
 
+    -- test Slim CI
+
 select *
 from final
  
