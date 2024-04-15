@@ -1,7 +1,6 @@
 {{
     config(
-        materialized='table',
-        group = 'customer_success'
+        materialized='table'
     )
 }}
 
