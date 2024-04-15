@@ -1,7 +1,6 @@
 {{
     config(
         materialized='incremental',
-        group='customer_success',
         required_tests=None
     )
 }}

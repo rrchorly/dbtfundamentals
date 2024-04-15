@@ -1,16 +1,9 @@
 # First, define the group and owner
-groups:
-  - name: customer_success
-    owner:
-      name: Customer Success Team
-      email: rijesh.rajan@dbtlabs.com
 
 # Then, add 'group' + 'access' modifier to specific models
 models:
   # This is a public model -- it's a stable & mature interface for other teams/projects
   - name: dim_customers
-    group: customer_success
-    access: public
     columns:
       - name: customer_id
         description: Primary Key for dim_customers
@@ -19,8 +12,6 @@ models:
           - not_null
   # This is a private model -- it's an intermediate transformation intended for use in this context *only*
   - name: fct_orders
-    group: customer_success
-    access: private
     columns:
       - name: order_id
         description: Primary Key for fct_orders
@@ -34,8 +25,6 @@ models:
   # This is a protected model -- it might be useful elsewhere in *this* project,
   # but it shouldn't be exposed elsewhere
   - name: int_orders__pivoted
-    group: customer_success
-    access: protected
     columns:
       - name: order_id
         description: Primary Key for int_orders__pivoted
@@ -44,8 +33,6 @@ models:
           - not_null
 
   - name: customer_order_unique 
-    group: customer_success
-    access: public
     columns:
       - name: unique_id
         description: Primary Key for customer_order_unique

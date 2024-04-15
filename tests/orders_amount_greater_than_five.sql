@@ -1,9 +1,3 @@
-{{
-    config(
-       group="customer_success"
-    )
-}}
-
 
 select 
     amount
