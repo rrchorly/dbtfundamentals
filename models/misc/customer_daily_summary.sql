@@ -13,7 +13,7 @@ customer_daily_summary as (
         {{ dbt_utils.generate_surrogate_key(['customer_id','order_date']) }} as id,
         customer_id,
         order_date,
-        count(1)
+        count(1) 
     from orders
     group by 1,2,3
 )
