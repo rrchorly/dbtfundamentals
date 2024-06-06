@@ -6,8 +6,10 @@ packages:
   - package: dbt-labs/codegen
     version: 0.12.1
   - package: Snowflake-Labs/dbt_constraints
-    version: 0.6.2 
-  - package: tnightengale/dbt_meta_testing
-    version: 0.3.6
+    version: 0.6.3
   - package: snowplow/snowplow_utils
-    version: 0.16.2
+    version: 0.16.5
+  - package: brooklyn-data/dbt_artifacts
+    version: 2.6.3
+  - package: elementary-data/elementary
+    version: 0.15.2
