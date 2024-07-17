@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'RRProject_jaffleshop'
+name: "RRProject_jaffleshop"
 version: '1.6.8'
 config-version: 2
 
@@ -55,3 +55,8 @@ models:
       +materialized: view
       +tags:
         - "hourly"
+
+
+dispatch:
+  - macro_namespace: elementary
+    search_order: ['RRProject_jaffleshop','elementary']

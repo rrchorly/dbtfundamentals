@@ -1,3 +1,11 @@
+    {{
+        config(
+            materialized='table',
+            database='analytics',
+            schema='dbt_rrajan_prod'
+        )
+    }}
+    
     with customers as (
     select * from {{ ref('stg_customers')}}
 ),
