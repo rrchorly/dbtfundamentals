@@ -41,3 +41,14 @@ sources:
     tables:
       - name: supplier
       - name: lineitem
+  - name: analytics_order
+    description: Table ORDER in analytics db
+    database: analytics
+    schema: dbt_rrajan_staging
+    tables:
+      - name: ORDER
+        description: order_data
+        quoting:
+          database: false
+          schema: false
+          identifier: true
