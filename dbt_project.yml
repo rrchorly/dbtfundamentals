@@ -2,8 +2,8 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: "RRProject_jaffleshop"
-version: '1.6.8'
+name: 'RRProject_jaffleshop'
+version: '1.8'
 config-version: 2
 
 quoting:
@@ -39,6 +39,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 query-comment:
   comment: "comment {{ dbt_version }}"
   append: true
+
+
   
 models:
   RRProject_jaffleshop:
@@ -55,8 +57,9 @@ models:
       +materialized: view
       +tags:
         - "hourly"
+    dbt_artifacts:
+      +database: analytics
+      +schema: dbt_rrajan_dev
 
-
-dispatch:
-  - macro_namespace: elementary
-    search_order: ['RRProject_jaffleshop','elementary']
+on-run-end:
+  - "{{ dbt_artifacts.upload_results(results) }}"
