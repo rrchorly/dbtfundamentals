@@ -61,5 +61,5 @@ models:
       +database: analytics
       +schema: dbt_rrajan_dev
 
-on-run-end:
-  - "{{ dbt_artifacts.upload_results(results) }}"
+# on-run-end:
+ # - "{{ dbt_artifacts.upload_results(results) }}"

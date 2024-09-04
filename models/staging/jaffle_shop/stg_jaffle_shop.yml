@@ -2,6 +2,9 @@ version: 2
 
 models:
   - name: stg_customers
+    meta:
+      owner: "@rrijesh"
+      model_maturity: in dev
     description: Staged customer data from our jaffle shop app.
     columns: 
       - name: customer_id
