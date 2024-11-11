@@ -55,8 +55,7 @@ models:
       +access: public
       +schema: staging
       +materialized: view
-      +tags:
-        - "hourly"
+      +tags: ["silver","modeling_layer:intermediate"]
     dbt_artifacts:
       +database: analytics
       +schema: dbt_rrajan_dev
