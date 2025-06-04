@@ -5,3 +5,4 @@ logs/
 models/staging/TestRR.md
 
 /.vs
+dbt_internal_packages/
