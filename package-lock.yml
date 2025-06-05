@@ -1,0 +1,23 @@
+packages:
+  - name: dbt_utils
+    package: dbt-labs/dbt_utils
+    version: 1.3.0
+  - name: logging
+    package: dbt-labs/logging
+    version: 0.8.0
+  - name: codegen
+    package: dbt-labs/codegen
+    version: 0.13.1
+  - name: dbt_constraints
+    package: Snowflake-Labs/dbt_constraints
+    version: 1.0.4
+  - name: snowplow_utils
+    package: snowplow/snowplow_utils
+    version: 0.17.2
+  - name: dbt_artifacts
+    package: brooklyn-data/dbt_artifacts
+    version: 2.9.3
+  - name: elementary
+    package: elementary-data/elementary
+    version: 0.18.3
+sha1_hash: caa2016feef7d36cc0def96c02faf8d5ac38f353
