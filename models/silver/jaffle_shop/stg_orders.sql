@@ -1,4 +1,4 @@
--- adding a comment to trigger CI
+   -- adding a comment to trigger CI 2
 with orders as (
 
     select
