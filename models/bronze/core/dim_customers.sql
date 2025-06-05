@@ -20,7 +20,9 @@ customer_orders as (
         -- adding a comment for CI
         max(order_date) as most_recent_order_date,
         count(order_id) as number_of_orders,
-        sum(amount) as lifetime_value
+       --sum(amount) as lifetime_value
+        100 as lifetime_value,
+        'great customer' customer_exp
     from orders
     group by 1
 ),
