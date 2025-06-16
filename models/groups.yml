@@ -1,0 +1,7 @@
+version: 2
+
+groups:
+  - name: land_operations_analytics_engineering
+    owner:
+      name: "Land Operations Analytics Engineering"
+      email: rijesh.rajan@dbtlabs.com

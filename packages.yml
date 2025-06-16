@@ -13,3 +13,5 @@ packages:
     version: 2.9.3
   - package: elementary-data/elementary
     version: 0.18.3
+  - package: dbt-labs/dbt_project_evaluator
+    version: ">=1.0.0"
