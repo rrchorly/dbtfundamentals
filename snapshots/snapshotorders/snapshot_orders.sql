@@ -6,7 +6,7 @@
       target_schema= 'dbt_rrajan_snapshots',
       unique_key='id',
       strategy='check',
-      check_cols='all'
+      check_cols=['id']
     )
 }}
 

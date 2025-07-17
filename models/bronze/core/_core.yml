@@ -19,9 +19,11 @@ models:
           - unique
           - not_null
       - name: amount
-       # tests:
-        #  - assert_column_is_greater_than_five
-              
+        description: Amount
+      - name: order_date
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: " order_date >= '2018-01-01' and order_date <= '2018-04-09'"
   # This is a protected model -- it might be useful elsewhere in *this* project,
   # but it shouldn't be exposed elsewhere
   - name: int_orders__pivoted
