@@ -23,8 +23,6 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
-
-target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
@@ -41,24 +39,27 @@ query-comment:
   append: true
 
 
-  
+
 models:
   RRProject_jaffleshop:
     bronze:
-      access: public
       +required_tests: {"unique.*|not_null.*": 2}
       core:
         +required_tests: {"relationship.*": 1}
-        schema: rr_marts
-        materialized: table
+        +schema: rr_marts
+        +materialized: table
+      +access: public
     silver:
-      access: public
-      schema: staging
-      materialized: view
-      tags: ["silver","modeling_layer:intermediate"]
-    dbt_artifacts:
-      database: analytics
-      schema: dbt_rrajan_dev
+      +access: public
+      +schema: staging
+      +materialized: view
+      +tags: ["silver", "modeling_layer:intermediate"]
+    +meta:
+      dbt_artifacts:
+        database: analytics
+        schema: dbt_rrajan_dev
 
 # on-run-end:
  # - "{{ dbt_artifacts.upload_results(results) }}"
+flags:
+  require_generic_test_arguments_property: true

@@ -1,8 +1,4 @@
-{{
-    config(
-       required_tests=None
-    )
-}}
+{{ config(meta={'required_tests': None}) }}
 
 with customers as (
     select * from {{ ref('dim_customers') }}

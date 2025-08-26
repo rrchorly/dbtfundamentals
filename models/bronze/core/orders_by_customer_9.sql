@@ -1,9 +1,4 @@
-{{
-    config(
-        materialized='incremental',
-        required_tests=None
-    )
-}}
+{{ config(materialized="incremental", meta={'required_tests': None}) }}
 
 select 
     customer_id,

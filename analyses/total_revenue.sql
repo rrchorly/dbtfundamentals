@@ -1,8 +1,4 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
+{{ config(meta={'materialized': 'table'}) }}
 
 with payments as (
 

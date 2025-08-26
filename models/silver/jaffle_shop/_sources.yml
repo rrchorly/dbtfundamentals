@@ -20,14 +20,15 @@ sources:
           - name: id
             description: Primary key for orders data.
             tests:
-              - unique              
+              - unique
               - not_null
-        loaded_at_field: _etl_loaded_at
-        freshness:
+        config:
+          loaded_at_field: _etl_loaded_at
+          freshness:
           #warn_after: {count: 12, period: hour}
           #error_after: {count: 24, period: hour}
-          warn_after: {count: "{{ 4 if modules.datetime.datetime.now().weekday() == 0 else (3 if modules.datetime.datetime.now().weekday() == 6 else 2) }}" , period: day}
-          error_after: {count: "{{ 5 if modules.datetime.datetime.now().weekday() == 0 else (4 if modules.datetime.datetime.now().weekday() == 6 else 3) }}" , period: day}
+            warn_after: {count: "{{ 4 if modules.datetime.datetime.now().weekday() == 0 else (3 if modules.datetime.datetime.now().weekday() == 6 else 2) }}", period: day}
+            error_after: {count: "{{ 5 if modules.datetime.datetime.now().weekday() == 0 else (4 if modules.datetime.datetime.now().weekday() == 6 else 3) }}", period: day}
   # - name: foo
   #   database: analytics
   #   schema: dbt_rrajan_dev
@@ -37,16 +38,16 @@ sources:
   #       freshness:
   #         warn_after: {count: "{{ 4 if modules.datetime.datetime.now().weekday() == 0 else (3 if modules.datetime.datetime.now().weekday() == 6 else 2) }}" , period: day}
   #         error_after: {count: "{{ 5 if modules.datetime.datetime.now().weekday() == 0 else (4 if modules.datetime.datetime.now().weekday() == 6 else 3) }}" , period: day}
-    
   - name: stripe
     database: raw
     schema: stripe
     tables:
       - name: payment
-        loaded_at_field: _batched_at
-        freshness:
-          warn_after: {count: 12, period: hour}
-          error_after: {count: 24, period: hour}
+        config:
+          loaded_at_field: _batched_at
+          freshness:
+            warn_after: {count: 12, period: hour}
+            error_after: {count: 24, period: hour}
   - name: snowflake
     database: snowflake_sample_data
     schema: tpch_sf1000

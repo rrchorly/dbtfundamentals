@@ -1,8 +1,4 @@
-{{
-    config(
-       required_tests=None
-    )
-}}
+{{ config(meta={'required_tests': None}) }}
 
 {{ dbt_utils.date_spine(
     datepart="day",
