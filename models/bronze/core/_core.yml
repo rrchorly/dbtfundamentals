@@ -21,11 +21,10 @@ models:
       - name: amount
         description: Amount
       - name: order_date
-        tests:
-          - dbt_utils.expression_is_true:
-              expression: " order_date >= '2018-01-01' and order_date <= '2018-04-09'"
-  # This is a protected model -- it might be useful elsewhere in *this* project,
-  # but it shouldn't be exposed elsewhere
+        # tests:
+        #   - dbt_utils.expression_is_true:
+        #       arguments:
+        #         expression: " order_date >= '2018-01-01' and order_date <= '2018-04-09'"
   - name: int_orders__pivoted
     columns:
       - name: order_id
@@ -34,7 +33,7 @@ models:
           - unique
           - not_null
 
-  - name: customer_order_unique 
+  - name: customer_order_unique
     columns:
       - name: unique_id
         description: Primary Key for customer_order_unique

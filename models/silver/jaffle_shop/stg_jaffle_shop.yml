@@ -2,34 +2,37 @@ version: 2
 
 models:
   - name: stg_customers
-    meta:
-      owner: "@rrijesh"
-      model_maturity: in dev
     description: Staged customer data from our jaffle shop app.
-    columns: 
+    columns:
       - name: customer_id
         description: The primary key for customers.
         tests:
           - unique
           - not_null
+    config:
+      meta:
+        owner: "@rrijesh"
+        model_maturity: in dev
   - name: stg_orders
-    access: public
     config:
       contract:
         enforced: true
       grants:
         select: ["TRANSFORMER"]
+      access: public
     description: Staged order data from our jaffle shop app.
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - customer_id
-            - order_date
+          arguments:
+            combination_of_columns:
+              - customer_id
+              - order_date
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - customer_id
-            - order_date
-            - status
+          arguments:
+            combination_of_columns:
+              - customer_id
+              - order_date
+              - status
     columns:
       - name: order_id
         data_type: number
@@ -44,19 +47,21 @@ models:
         description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
-              values:
-                - completed
-                - shipped
-                - returned
-                - return_pending
-                - placed
+              arguments:
+                values:
+                  - completed
+                  - shipped
+                  - returned
+                  - return_pending
+                  - placed
       - name: customer_id
         data_type: number
         description: Foreign key to stg_customers.customer_id.
         tests:
           - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: order_date
         data_type: date
         description: date of order
