@@ -1,8 +1,0 @@
-snapshots:
-  - name: foo_snap
-    relation: ref('foo')
-    config:
-      schema: snapshots
-      unique_key: id
-      strategy: check
-      check_cols: ['id']
