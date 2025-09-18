@@ -1,0 +1,25 @@
+version: 2
+
+seeds:
+  - name: agent_seed
+    description: Data finnes ikke i kilde.
+    materialization: table
+    column_types:
+      sk_agent_id: int
+      ansatt_id: string
+      organisasjon_id: string
+      puzzel_agent_id: bigint
+      zendesk_agent_id: bigint
+      brukernavn: string
+      primaer: string
+      tittel: string
+      navn: string
+      epost: string
+      leder: string
+      konto_inaktiv: string
+      ansatt_status: string
+      ansatt_gruppe: string
+      stillingsandel: numeric
+      fulltid_deltid: string
+      valid_from: date
+      valid_to: date

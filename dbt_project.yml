@@ -61,5 +61,7 @@ models:
 
 # on-run-end:
  # - "{{ dbt_artifacts.upload_results(results) }}"
+#flags:
+ # require_generic_test_arguments_property: true
 flags:
   require_generic_test_arguments_property: true
