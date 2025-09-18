@@ -1,0 +1,2 @@
+sk_agent_id,ansatt_id,organisasjon_id,puzzel_agent_id,zendesk_agent_id,brukernavn,primaer,tittel,navn,epost,leder,konto_inaktiv,ansatt_status,ansatt_gruppe,stillingsandel,fulltid_deltid,valid_from,valid_to
+5461,00000005,120,-1,-1,STIG,Yes,Ekstern konsulent,"Bjørnå, Stig",stig.bjorna@lyse.no,"Holmen, Gyrid",Y,Aktiv,Ekstern,NULL,,2021-05-01,2023-09-30
