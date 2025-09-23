@@ -12,6 +12,7 @@ models:
           - unique
           - not_null
       - name: first_name
+        tags: [key]
         description: The first name of the customer.
       - name: last_name
         description: The last name of the customer.

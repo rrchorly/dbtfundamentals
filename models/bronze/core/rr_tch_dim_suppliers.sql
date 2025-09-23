@@ -1,0 +1,1 @@
+select * from {{ ref('rr_tpch', 'dim_suppliers') }}
