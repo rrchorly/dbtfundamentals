@@ -38,7 +38,15 @@ query-comment:
   comment: "comment {{ dbt_version }}"
   append: true
 
-
+seeds:
+  +persist_docs:
+    columns: true
+    relation: true
+  +schema: seeds # if in root folder, put it into seeds
+  +tags: seed
+  cats:
+    +schema: odi_cats
+    +kms_key_name: "{{ env_var('DBT_CATS_BQ_CMEK', '') }}"
 
 models:
   RRProject_jaffleshop:
