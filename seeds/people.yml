@@ -1,0 +1,4 @@
+seeds:
+  - name: people
+    config:
+      kms_key_name: fake/fake

@@ -1,0 +1,16 @@
+models:
+- name: stg_test_customer_orders
+  description: "Modellen kombinerer kundedata med ordredata for \xE5 gi en helhetlig\
+    \ oversikt over kundens bestillinger. Dette er nyttig for \xE5 analysere kundeadferd\
+    \ og ordrestatus."
+  columns:
+  - name: customer_id
+    description: Unik identifikator for kunden.
+  - name: last_name
+    description: Etternavnet til kunden.
+  - name: order_id
+    description: Unik identifikator for bestillingen.
+  - name: order_date
+    description: Datoen da bestillingen ble gjort.
+  - name: status
+    description: Statusen til bestillingen.

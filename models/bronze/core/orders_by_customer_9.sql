@@ -1,7 +1,7 @@
 {{ config(materialized="incremental", meta={'required_tests': None}) }}
 
-select 
+SELECT
     customer_id,
-    count(order_id) as num_orders
-from {{ ref('fct_orders') }}
-group by customer_id
+    COUNT(order_id) AS num_orders
+FROM {{ ref('fct_orders') }}
+GROUP BY customer_id
