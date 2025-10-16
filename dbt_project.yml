@@ -53,12 +53,13 @@ models:
       +required_tests: {"unique.*|not_null.*": 2}
       core:
         +required_tests: {"relationship.*": 1}
-        +schema: rr_marts
+        +schema: "{{ env_var('DBT_RR_SCHEMA') }}"
+        +transient: false
         +materialized: table
       +access: public
     silver:
       +access: public
-      +schema: staging
+      +schema: "{{ env_var('DBT_RR_TGT_SCHEMA') }}"
       +materialized: view
       +tags: ["silver", "modeling_layer:intermediate"]
     +meta:
