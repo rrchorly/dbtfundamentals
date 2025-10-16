@@ -46,7 +46,6 @@ seeds:
   +tags: seed
   cats:
     +schema: odi_cats
-    +kms_key_name: "{{ env_var('DBT_CATS_BQ_CMEK', '') }}"
 
 models:
   RRProject_jaffleshop:

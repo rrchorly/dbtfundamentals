@@ -1,10 +1,11 @@
-with customers as (
+WITH customers AS (
 
-    select
-        id as customer_id,
+    SELECT
+        id AS customer_id,
         first_name,
-        last_name 
-    from {{ source('jaffle_shop','customers') }}
+        last_name
+    FROM {{ source('jaffle_shop','customers') }}
 )
+
 -- {{ dbt_version }}
-select * from customers 
+SELECT * FROM customers

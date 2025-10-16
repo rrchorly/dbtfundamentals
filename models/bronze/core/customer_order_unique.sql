@@ -1,13 +1,11 @@
-with orders as (
-    select 
-    *
-    from {{ ref('fct_orders') }}
+WITH orders AS (
+    SELECT *
+    FROM {{ ref('fct_orders') }}
 ),
 
-customer_order_unique as (
-    select 
-    md5(customer_id || order_id ) as unique_id 
-    from orders
+customer_order_unique AS (
+    SELECT MD5(customer_id || order_id) AS unique_id
+    FROM orders
 )
-   
-select * from customer_order_unique
+
+SELECT * FROM customer_order_unique

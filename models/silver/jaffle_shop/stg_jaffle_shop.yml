@@ -67,3 +67,16 @@ models:
         description: date of order
   - name: stg_payments
     description: Staged Payments data
+    columns:
+      - name: payment_id
+        description: Unik identifikator for hver betaling.
+      - name: order_id
+        description: Referanse til tilhørende ordre.
+      - name: payment_method
+        description: Metoden brukt for betalingen, for eksempel kredittkort eller PayPal.
+      - name: status
+        description: Gjeldende status for betalingen, for eksempel fullført eller avvist.
+      - name: amount
+        description: Betalingsbeløp i dollar.
+      - name: created_at
+        description: Tidspunktet da betalingen ble opprettet.
