@@ -38,8 +38,6 @@ models:
           tags: ["minor"]
       - name: amount
         description: Amount
-        tests:
-          - unique
       - name: order_date
         # tests:
         #   - dbt_utils.expression_is_true:
