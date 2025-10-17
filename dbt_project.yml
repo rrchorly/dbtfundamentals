@@ -48,7 +48,7 @@ seeds:
     +schema: odi_cats
 
 models:
-  RRProject_jaffleshop:
+ # RRProject_jaffleshop:
     bronze:
       +required_tests: {"unique.*|not_null.*": 2}
       core:
@@ -62,14 +62,4 @@ models:
       +schema: "{{ env_var('DBT_RR_TGT_SCHEMA') }}"
       +materialized: view
       +tags: ["silver", "modeling_layer:intermediate"]
-    +meta:
-      dbt_artifacts:
-        database: analytics
-        schema: dbt_rrajan_dev
-
-# on-run-end:
- # - "{{ dbt_artifacts.upload_results(results) }}"
-#flags:
- # require_generic_test_arguments_property: true
-flags:
-  require_generic_test_arguments_property: true
+ 
