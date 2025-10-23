@@ -1,0 +1,1 @@
+select * from {{ source('ctabs_' ~ var("data_source") ~ '_util', 'test') }}

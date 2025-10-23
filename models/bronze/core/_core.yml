@@ -11,7 +11,8 @@ models:
         tests:
           - unique
           - not_null
-        tags: ["minor"]
+        config:
+          tags: ["minor"]
       - name: first_name
         description: The first name of the customer.
       - name: last_name
