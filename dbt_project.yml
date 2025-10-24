@@ -38,9 +38,9 @@ query-comment:
   comment: "comment {{ dbt_version }}"
   append: true
 
-vars:
-  data_source: vci
-  backfill_config: {'is_load_days': True, 'is_start_end_date': False, 'load_dates': ['2024-05-01', '2024-05-02'], 'start_date': '2024-05-01', 'end_date': '2024-05-10', 'is_cleanup_meta_current_load': True}
+# vars:
+#   data_source: vci
+#   backfill_config: {'is_load_days': True, 'is_start_end_date': False, 'load_dates': ['2024-05-01', '2024-05-02'], 'start_date': '2024-05-01', 'end_date': '2024-05-10', 'is_cleanup_meta_current_load': True}
 
 seeds:
   +persist_docs:
