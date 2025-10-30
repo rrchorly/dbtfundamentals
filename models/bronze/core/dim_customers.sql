@@ -12,7 +12,7 @@ WITH customers AS (
 )
 
 , orders AS (
-    SELECT * FROM {{ ref('fct_orders') }}
+    SELECT * FROM {{ ref('fct_orders') }} where
 )
 
 , customer_orders AS (
